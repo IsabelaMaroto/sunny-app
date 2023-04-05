@@ -4,13 +4,16 @@ import { useState } from "react";
 import Logo from "../../images/logo.svg";
 
 const ContainerHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  position: absolute;
   max-height: 50px;
-  padding: 10px;
-  background-color: red;
+  width: 100%;
 `;
 
 const BoxLogo = styled.div`
@@ -20,9 +23,7 @@ const BoxLogo = styled.div`
   }
 `;
 
-const BoxList = styled.div`
- 
-`;
+const BoxList = styled.div``;
 export function Header() {
   const [MenuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -59,20 +60,22 @@ export function Header() {
   `;
   return (
     <ContainerHeader className="container-header">
-      <BoxLogo>
-        <img src={Logo} alt="logo Sunnyside" />
-      </BoxLogo>
-      <BoxList>
-        <List>
-          <li className="li">About</li>
-          <li>Services</li>
-          <li>Projects</li>
-          <li>Contacts</li>
-        </List>
-        <MenuBox className="menu-box" onClick={toggleMenu}>
-          <Menu />
-        </MenuBox>
-      </BoxList>
+      <div className="flex">
+        <BoxLogo>
+          <img src={Logo} alt="logo Sunnyside" />
+        </BoxLogo>
+        <BoxList>
+          <List>
+            <li className="li">About</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Contacts</li>
+          </List>
+          <MenuBox className="menu-box" onClick={toggleMenu}>
+            <Menu />
+          </MenuBox>
+        </BoxList>
+      </div>
     </ContainerHeader>
   );
 }
