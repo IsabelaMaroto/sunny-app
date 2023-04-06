@@ -4,22 +4,21 @@ import { useState } from "react";
 import Logo from "../../images/logo.svg";
 
 const ContainerHeader = styled.div`
+  width: 100%;
+  position: absolute;
 
-  .flex{
+  .flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
   }
-  position: absolute;
-  max-height: 50px;
-  width: 100%;
 `;
 
 const BoxLogo = styled.div`
   svg {
-    height: 50px;
-    width: 50px;
+    height: fit-content;
+    width: fit-content;
   }
 `;
 
@@ -33,29 +32,26 @@ export function Header() {
   const List = styled.ul`
     display: flex;
     flex-wrap: wrap;
-    float: right;
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
+    font-family: "Barlow", sans-serif;
+    text-align: center;
 
     @media (max-width: 700px) {
       display: ${MenuOpen ? "inline" : "none"};
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       background-color: hsl(0, 0%, 100%);
-      width: 90%;
+      max-width: 90%;
+      overflow: hidden;
       margin-top: 50px;
-      position: fixed;
     }
   `;
 
   const MenuBox = styled.div`
     display: none;
-    z-index: 6;
 
     @media (max-width: 700px) {
       display: fixed;
-      padding-top: 10px;
-      margin-left: 10px;
-      z-index: 6;
     }
   `;
   return (

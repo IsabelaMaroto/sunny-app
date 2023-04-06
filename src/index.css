@@ -1,7 +1,3 @@
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
-}
 
 html,
 body,
@@ -108,13 +104,12 @@ section {
 }
 
 body {
-	line-height: 1;
+	line-height: 1.2;
 	margin: 0;
 	font-family: 'Barlow', sans-serif;
 	font-family: 'Fraunces', serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
 }
 
 ol,

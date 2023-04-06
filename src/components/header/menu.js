@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Hamburguer = styled.div`
-  width: 2rem;
-  height: 2rem;
+  width: 100%;
+  min-height: 2rem;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
-  z-index: 10;
+ 
 `;
 const Burguer = styled.div`
   width: 2rem;
