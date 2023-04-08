@@ -11,7 +11,7 @@ const ContainerHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
   }
 `;
 
@@ -22,7 +22,6 @@ const BoxLogo = styled.div`
   }
 `;
 
-const BoxList = styled.div``;
 export function Header() {
   const [MenuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -34,16 +33,40 @@ export function Header() {
     flex-wrap: wrap;
     font-family: "Barlow", sans-serif;
     text-align: center;
+    color: hsl(213, 9%, 39%);
+
+    li {
+      padding: 20px 0;
+      cursor: pointer;
+    }
+    li:hover {
+      background-color: hsl(0, 0%, 91%);
+    }
 
     @media (max-width: 700px) {
-      display: ${MenuOpen ? "inline" : "none"};
+      display: ${MenuOpen ? "flex" : "none"};
+      flex-direction: column;
       position: absolute;
+      justify-content: center;
+      top: 100px;
       left: 50%;
       transform: translateX(-50%);
       background-color: hsl(0, 0%, 100%);
-      max-width: 90%;
+      width: 90%;
       overflow: hidden;
-      margin-top: 50px;
+      z-index: 100;
+      min-height: 320px;
+
+      #contacts {
+        background-color: hsl(51, 100%, 49%);
+        border-radius: 50px;
+        width: 40%;
+        margin: 10px auto;
+        font-family: "Fraunces", serif;
+        color: hsl(212, 27%, 19%);
+        text-transform: uppercase;
+        font-size: 14px;
+      }
     }
   `;
 
@@ -60,17 +83,17 @@ export function Header() {
         <BoxLogo>
           <img src={Logo} alt="logo Sunnyside" />
         </BoxLogo>
-        <BoxList>
+        <div>
           <List>
             <li className="li">About</li>
             <li>Services</li>
             <li>Projects</li>
-            <li>Contacts</li>
+            <li id="contacts">Contact</li>
           </List>
           <MenuBox className="menu-box" onClick={toggleMenu}>
             <Menu />
           </MenuBox>
-        </BoxList>
+        </div>
       </div>
     </ContainerHeader>
   );

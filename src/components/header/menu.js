@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import HamburguerIcon from '../../images/icon-hamburger.svg';
 
 const Hamburguer = styled.div`
   width: 100%;
@@ -8,18 +9,10 @@ const Hamburguer = styled.div`
   flex-flow: column nowrap;
  
 `;
-const Burguer = styled.div`
-  width: 2rem;
-  height: 0.25rem;
-  border-radius: 10px;
-  background-color: hsl(0, 0%, 100%);
-`;
 export function Menu() {
   return (
     <Hamburguer>
-      <Burguer ></Burguer>
-      <Burguer ></Burguer>
-      <Burguer ></Burguer>
+      <img src={HamburguerIcon} alt="Menu icon"/>
     </Hamburguer>
   );
 }
