@@ -36,12 +36,23 @@ const Container = styled.section`
    .box-client{
     padding: 30px 0;
    }
+
+   @media (min-width: 700px){
+    .flex-change{
+        display: flex;
+        padding: 50px ;
+
+        .box-client{
+            padding: 0 60px ;
+        }
+    }
+   }
 `
 export function Clients(){
     return(
         <Container>
         <h3>Client testimonials</h3>
-        <div>
+        <div className="flex-change">
         {clients.map((client)=>(
             <div className="box-client">
                 <img src={client.photo} alt="client"/>

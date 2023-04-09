@@ -9,7 +9,7 @@ const Container = styled.section`
   
     img {
       width: 100%;
-      height: max-content;
+      height: 100%;
     }
 
     .text {
@@ -26,17 +26,51 @@ const Container = styled.section`
       color: hsl(198, 62%, 26%);
     }
   }
-  
-@media (min-width: 500px) {
-  display: flex;
-}
+  .mobile{
+    display: flex;
+  }
+  .desktop{
+    display: none;
+  }
+  @media (min-width: 700px) {
+    display: flex;
+    
+    .box{
+      flex: 1;
+      justify-content: center;
+
+      img{
+        min-height: 500px;
+      }
+    }
+    .text{
+      align-items: unset;
+      
+      h2{
+        padding: 10px 0;
+      }
+      p{
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        font-size: 18px;
+      }
+    }
+    .mobile{
+    display: none;
+  }
+  .desktop{
+    display: flex;
+  }
+  }
 `;
 export function Home3() {
   return (
     <Container>
       {skeleton.map((item,index) => (
         <div className="box">
-          <img src={item.img} alt="graphic/photography" />
+          <img src={item.img} alt="graphic/photography" className='mobile'/>
+          <img src={item.imgDesktop} alt="graphic/photography" className='desktop'/>
           <div className={index === 0 ? ' text graphic' : 'text photography'}>
             <h2>{item.title}</h2>
             <p>{item.p}</p>

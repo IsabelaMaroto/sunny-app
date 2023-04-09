@@ -59,12 +59,49 @@ const Container = styled.section`
       filter: opacity(100%);
     }
   }
-
-  @media (min-width: 500px) {
-    .flex-change{
+  .mobile {
+    display: flex;
+  }
+  .desktop {
+    display: none;
+  }
+  @media (min-width: 700px) {
+    .mobile {
+      display: none
+    }
+    .desktop {
       display: flex;
     }
-    
+    .flex-change {
+      display: flex;
+      height: 100%;
+
+      .img {
+        flex: 1;
+        min-width: 50%;
+      }
+      .text-div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        margin: auto 0;
+        margin-left: 8%;
+        max-height: 500px;
+
+        h3 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          padding: 20px 0;
+        }
+      }
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
   }
 `;
 
@@ -72,9 +109,10 @@ export function Home2() {
   return (
     <Container>
       {skeleton.map((item, index) => (
-        <div className="flex-change">
+        <div className={index === 0 ? "flex-change reverse" : "flex-change"}>
           <div className="img">
-            <img src={item.img} alt="background" />
+            <img src={item.img} alt="background" className="mobile" />
+            <img src={item.imgDesktop} alt="background" className="desktop" />
           </div>
           <div className="text-div">
             <h2>{item.title}</h2>

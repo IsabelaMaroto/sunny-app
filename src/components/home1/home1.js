@@ -25,6 +25,8 @@ const Container = styled.div`
     font-weight: 900;
     text-align: center;
     letter-spacing: 5px;
+    max-width: 90%;
+    
   }
   .arrow {
     position: absolute;
@@ -33,13 +35,25 @@ const Container = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     .orange-mobile {
       display: none;
     }
     .orange-desktop {
-      display: block;
+      display: flex;
       width: 100%;
+      height: 100%;
+      min-height: 550px;
+    }
+    .title {
+      top: 200px;
+      font-size: 60px;
+      letter-spacing: 10px;
+      min-width: 60%;
+      
+    }
+    .arrow {
+      top: 400px;
     }
   }
 `;

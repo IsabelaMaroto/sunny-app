@@ -1,10 +1,20 @@
 import MilkImg from "../../images/mobile/image-gallery-milkbottles.jpg";
+import MilkImgDesktop from "../../images/desktop/image-gallery-milkbottles.jpg"
 import OrangeImg from "../../images/mobile/image-gallery-orange.jpg";
+import OrangeImgDesktop from "../../images/desktop/image-gallery-orange.jpg";
 import ConeImg from "../../images/mobile/image-gallery-cone.jpg";
+import ConeImgDesktop from "../../images/desktop/image-gallery-cone.jpg";
 import CubesImg from "../../images/mobile/image-gallery-sugar-cubes.jpg";
+import CubesImgDesktop from "../../images/desktop/image-gallery-sugarcubes.jpg";
 import styled from "styled-components";
 
 const Container = styled.section`
+  .mobile{
+    display: flex;
+  }
+  .desktop{
+    display: none;
+  }
   .pictures {
     display: flex;
     flex-direction: column;
@@ -46,6 +56,28 @@ const Container = styled.section`
   svg:hover {
     fill: hsl(0, 0%, 100%);
   }
+
+  @media (min-width: 700px){
+    .mobile{
+    display: none;
+  }
+  .desktop{
+    display: flex;
+  }
+  .pictures{
+    flex-direction: row;
+  }
+  .links{
+    justify-content: center;
+
+    p{
+      padding: 0 20px;
+    }
+  }
+  footer{
+    padding: 50px;
+  }
+  }
 `;
 
 export function Footer() {
@@ -53,12 +85,16 @@ export function Footer() {
     <Container>
       <div className="pictures">
         <div className="div-flex">
-          <img src={MilkImg} alt="milkbottles" />
-          <img src={OrangeImg} alt="orange " />
+          <img src={MilkImg} alt="milkbottles" className="mobile"/>
+          <img src={MilkImgDesktop} alt="milkbottles" className="desktop"/>
+          <img src={OrangeImg} alt="orange " className="mobile"/>
+          <img src={OrangeImgDesktop} alt="orange " className="desktop"/>
         </div>
         <div className="div-flex">
-          <img src={ConeImg} alt="ice cream cone" />
-          <img src={CubesImg} alt="sugar cubes" />
+          <img src={ConeImg} alt="ice cream cone" className="mobile"/>
+          <img src={ConeImgDesktop} alt="ice cream cone" className="desktop"/>
+          <img src={CubesImg} alt="sugar cubes" className="mobile"/>
+          <img src={CubesImgDesktop} alt="sugar cubes" className="desktop"/>
         </div>
       </div>
       <footer>

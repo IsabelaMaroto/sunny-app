@@ -33,14 +33,27 @@ export function Header() {
     flex-wrap: wrap;
     font-family: "Barlow", sans-serif;
     text-align: center;
-    color: hsl(213, 9%, 39%);
+    color: hsl(0, 0%, 100%);
 
     li {
-      padding: 20px 0;
+      padding: 15px 15px;
+      margin: 0 10px;
       cursor: pointer;
     }
-    li:hover {
-      background-color: hsl(0, 0%, 91%);
+    #contacts {
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 50px;
+      width: 100px;
+      font-family: "Fraunces", serif;
+      color: hsl(212, 27%, 19%);
+      text-transform: uppercase;
+      font-size: 14px;
+      align-items: center;
+    }
+    #contacts:hover{
+      transition:ease 0.2s;
+      background-color: #6fcfff;
+      color: hsl(0, 0%, 100%);
     }
 
     @media (max-width: 700px) {
@@ -56,16 +69,19 @@ export function Header() {
       overflow: hidden;
       z-index: 100;
       min-height: 320px;
+      color: hsl(213, 9%, 39%);
 
       #contacts {
         background-color: hsl(51, 100%, 49%);
-        border-radius: 50px;
         width: 40%;
+        padding: 20px 0;
         margin: 10px auto;
-        font-family: "Fraunces", serif;
-        color: hsl(212, 27%, 19%);
-        text-transform: uppercase;
-        font-size: 14px;
+      }
+      li {
+        margin: 0;
+      }
+      li:hover {
+        background-color: hsl(0, 0%, 91%);
       }
     }
   `;
